@@ -1,0 +1,292 @@
+@import "../../base-style.css";
+
+.footer {
+    width: 100%;
+    background: linear-gradient(135deg, #1e293b 0%, #2d3748 50%, #374151 100%);
+    padding: 80px 0 40px;
+    position: relative;
+    overflow: hidden;
+
+// Subtle animated gradient overlay matching login page
+&::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+            radial-gradient(circle at 20% 30%, rgba(99, 102, 241, 0.08) 0%, transparent 60%),
+            radial-gradient(circle at 80% 70%, rgba(139, 92, 246, 0.08) 0%, transparent 60%);
+    pointer-events: none;
+    animation: subtleShift 20s ease-in-out infinite;
+}
+
+    @keyframes subtleShift {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.8; }
+    }
+}
+
+.footerContainer {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 80px;
+    position: relative;
+    z-index: 1;
+}
+
+.footerContent {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+}
+
+.footerColumns {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 48px;
+}
+
+.footerColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.footerColumnTitle {
+    font-size: 18px;
+    font-weight: 700;
+    color: #f1f5f9;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+    font-family: "Montserrat-Medium", sans-serif;
+}
+
+.footerLinks {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.footerLink {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    display: inline-block;
+    width: fit-content;
+    font-family: "Montserrat-Medium", sans-serif;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: linear-gradient(90deg, #6366f1, #8b5cf6);
+        transition: width 0.3s ease;
+    }
+
+    &:hover {
+        color: #e2e8f0;
+        transform: translateX(4px);
+
+        &::after {
+            width: 100%;
+        }
+    }
+}
+
+// Contact Card with glassmorphism effect
+   .footerContactCard {
+       display: flex;
+       flex-direction: column;
+       gap: 20px;
+       padding: 24px;
+       background: rgba(255, 255, 255, 0.04);
+       border-radius: 16px;
+       border: 1px solid rgba(226, 232, 240, 0.1);
+       backdrop-filter: blur(10px);
+       transition: all 0.3s ease;
+
+       &:hover {
+           background: rgba(255, 255, 255, 0.06);
+           border-color: rgba(99, 102, 241, 0.2);
+           transform: translateY(-2px);
+       }
+   }
+
+.footerContactItem {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: default;
+
+    &[href] {
+        cursor: pointer;
+
+        &:hover {
+            color: #e2e8f0;
+
+            .footerContactIcon {
+                color: #a5b4fc;
+                transform: scale(1.1);
+            }
+        }
+    }
+}
+
+.footerContactIcon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    color: #94a3b8;
+    transition: all 0.3s ease;
+    margin-top: 2px;
+}
+
+.footerContactText {
+    font-size: 14px;
+    line-height: 150%;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    font-family: "Montserrat-Medium", sans-serif;
+}
+
+// Social Links Section
+   .footerSocials {
+       display: flex;
+       gap: 16px;
+       flex-wrap: wrap;
+   }
+
+.footerSocialLink {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 12px;
+    border: 1px solid rgba(226, 232, 240, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover {
+        background: rgba(99, 102, 241, 0.15);
+        border-color: rgba(99, 102, 241, 0.3);
+        transform: translateY(-4px);
+        box-shadow: 0 8px 16px rgba(99, 102, 241, 0.2);
+
+        .footerSocialIcon {
+            transform: scale(1.1);
+        }
+    }
+}
+
+.footerSocialIcon {
+    width: 22px;
+    height: 22px;
+    filter: brightness(0) invert(1);
+    opacity: 0.85;
+    transition: all 0.3s ease;
+}
+
+// Bottom Bar
+   .footerBottom {
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       padding-top: 32px;
+       border-top: 1px solid rgba(226, 232, 240, 0.1);
+   }
+
+.footerLogo {
+    font-size: 32px;
+    font-weight: 700;
+    color: #f1f5f9;
+    letter-spacing: -0.5px;
+    font-family: 'Centrazone';
+}
+
+.footerCopyright {
+    color: #94a3b8;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+    font-family: "Montserrat-Medium", sans-serif;
+}
+
+// Responsive Design
+@media (max-width: 1240px) {
+    .footerColumns {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
+}
+
+@media (max-width: 900px) {
+    .footerContainer {
+        padding: 0 48px;
+    }
+
+    .footer {
+        padding: 64px 0 32px;
+    }
+
+    .footerColumns {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .footerBottom {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .footerContainer {
+        padding: 0 24px;
+    }
+
+    .footer {
+        padding: 48px 0 24px;
+    }
+
+    .footerContent {
+        gap: 48px;
+    }
+
+    .footerColumnTitle {
+        font-size: 16px;
+    }
+
+    .footerLink {
+        font-size: 14px;
+    }
+
+    .footerLogo {
+        font-size: 28px;
+    }
+
+    .footerSocials {
+        gap: 12px;
+    }
+
+    .footerSocialLink {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (min-width: 1820px) {
+    .footerContainer {
+        max-width: 1440px;
+    }
+}

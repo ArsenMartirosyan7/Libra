@@ -1,0 +1,557 @@
+.contactUs {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #e2e8f0 100%);
+    padding: 80px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background:
+                radial-gradient(circle at 20% 30%, rgba(99, 102, 241, 0.04) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(139, 92, 246, 0.04) 0%, transparent 50%);
+        pointer-events: none;
+    }
+}
+
+.logoContainer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    position: relative;
+    z-index: 1;
+}
+
+.logoIcon {
+    width: 48px;
+    height: 48px;
+    color: #6366f1;
+    filter: drop-shadow(0 4px 8px rgba(99, 102, 241, 0.2));
+}
+
+.logoText {
+    font-size: 40px;
+    font-weight: 700;
+    color: #1e293b;
+    letter-spacing: -0.5px;
+}
+
+.contactTitle {
+    font-size: 48px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 64px;
+    font-family: 'Monserrat';
+    text-align: center;
+    letter-spacing: -0.5px;
+    position: relative;
+    z-index: 1;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -12px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(to right, #6366f1, #1B2A41);
+        border-radius: 2px;
+    }
+}
+
+.armenianTitle {
+    font-size: 42px;
+}
+
+.contactContainer {
+    max-width: 1280px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    position: relative;
+    z-index: 1;
+}
+
+// Map Section
+.mapContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.mapWrapper {
+    background: white;
+    border-radius: 20px;
+    padding: 8px;
+    box-shadow:
+            0 4px 6px rgba(0, 0, 0, 0.05),
+            0 10px 15px rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    transition: all 0.3s ease;
+    overflow: hidden;
+
+    &:hover {
+        box-shadow:
+                0 10px 15px rgba(0, 0, 0, 0.08),
+                0 20px 25px rgba(0, 0, 0, 0.05);
+        transform: translateY(-2px);
+    }
+}
+
+.map {
+    width: 100%;
+    height: 400px;
+    border: none;
+    border-radius: 16px;
+    display: block;
+}
+
+.mapInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.addressCard {
+    background: white;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(226, 232, 240, 0.6);
+    transition: all 0.3s ease;
+
+    &:hover {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        border-color: rgba(99, 102, 241, 0.2);
+    }
+}
+
+.addressHeader {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    position: relative;
+}
+
+.addressIcon {
+    width: 20px;
+    height: 20px;
+    color: #6366f1;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.addressText {
+    flex: 1;
+    font-size: 14px;
+    line-height: 150%;
+    color: #475569;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+}
+
+.copyBtn {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(99, 102, 241, 0.08);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    border-radius: 8px;
+    color: #6366f1;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+        background: rgba(99, 102, 241, 0.15);
+        transform: scale(1.05);
+    }
+
+    &:active {
+        transform: scale(0.95);
+    }
+}
+
+.mapBtn {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(to right, #6366f1, #1B2A41);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    letter-spacing: 0.3px;
+
+    &:hover {
+        box-shadow: 0 10px 25px rgba(99, 102, 241, 0.4);
+        transform: translateY(-2px);
+    }
+
+    &:active {
+        transform: translateY(0);
+    }
+}
+
+// Form Section
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    background: white;
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow:
+            0 4px 6px rgba(0, 0, 0, 0.05),
+            0 10px 15px rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    transition: all 0.3s ease;
+
+    &:hover {
+        box-shadow:
+                0 10px 15px rgba(0, 0, 0, 0.08),
+                0 20px 25px rgba(0, 0, 0, 0.05);
+    }
+}
+
+.socialIcons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.socialIconWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.socialIconBtn {
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 12px;
+
+    &:hover {
+        background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 100%);
+        border-color: #c7d2fe;
+        transform: translateY(-4px);
+        box-shadow: 0 8px 16px rgba(99, 102, 241, 0.2);
+    }
+
+    &:active {
+        transform: translateY(-2px);
+    }
+}
+
+.socialIconImg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.socialIconName {
+    font-size: 12px;
+    color: #64748b;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+}
+
+// Form Elements
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.inputWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input,
+.textarea {
+    width: 100%;
+    padding: 16px;
+    padding-right: 44px;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 15px;
+    color: #1e293b;
+    outline: none;
+    transition: all 0.2s ease;
+    font-family: inherit;
+    background: white;
+
+    &::placeholder {
+        color: #94a3b8;
+    }
+
+    &:focus {
+        border-color: #6366f1;
+        box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+    }
+
+    &:hover:not(:focus) {
+        border-color: #cbd5e1;
+    }
+}
+
+.textarea {
+    min-height: 120px;
+    resize: vertical;
+    line-height: 1.5;
+}
+
+.inputError {
+    border-color: #ef4444 !important;
+    background: #fef2f2;
+
+    &:focus {
+        box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.1);
+    }
+}
+
+.clearBtn {
+    position: absolute;
+    right: 12px;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    padding: 0;
+
+    &:hover {
+        color: #64748b;
+        transform: scale(1.1);
+    }
+}
+
+.clearBtnTextarea {
+    top: 12px;
+    bottom: auto;
+}
+
+.errorIcon {
+    position: absolute;
+    right: 14px;
+    font-size: 18px;
+    color: #ef4444;
+}
+
+.errorIconTextarea {
+    top: 14px;
+    bottom: auto;
+}
+
+.errorText {
+    font-size: 13px;
+    color: #ef4444;
+    font-weight: 500;
+    padding-left: 4px;
+    letter-spacing: 0.2px;
+}
+
+.submitBtn {
+    width: 100%;
+    padding: 16px;
+    margin-top: 8px;
+    background: linear-gradient(to right, #6366f1, #1B2A41);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    letter-spacing: 0.5px;
+
+    &:hover:not(:disabled) {
+        box-shadow: 0 10px 25px rgba(99, 102, 241, 0.4);
+        transform: translateY(-2px);
+    }
+
+    &:active:not(:disabled) {
+        transform: translateY(0);
+    }
+
+    &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+}
+
+.successMessage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 20px;
+    background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+    border-radius: 12px;
+    border: 1px solid #86efac;
+    margin-top: 8px;
+    animation: slideIn 0.4s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.successIcon {
+    width: 24px;
+    height: 24px;
+    color: #059669;
+}
+
+.successText {
+    font-size: 16px;
+    font-weight: 600;
+    color: #059669;
+    letter-spacing: 0.3px;
+}
+
+// Responsive Design
+@media (max-width: 1024px) {
+    .contactContainer {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contactUs {
+        padding: 60px 24px;
+    }
+
+    .logoIcon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .logoText {
+        font-size: 32px;
+    }
+
+    .contactTitle {
+        font-size: 36px;
+        margin-bottom: 48px;
+    }
+
+    .armenianTitle {
+        font-size: 32px;
+    }
+
+    .mapWrapper,
+    .formContainer {
+        padding: 20px;
+        border-radius: 20px;
+    }
+
+    .formContainer {
+        padding: 32px 24px;
+    }
+
+    .map {
+        height: 300px;
+    }
+
+    .socialIcons {
+        gap: 16px;
+    }
+
+    .socialIconBtn {
+        width: 48px;
+        height: 48px;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contactUs {
+        padding: 48px 16px;
+    }
+
+    .logoIcon {
+        width: 36px;
+        height: 36px;
+    }
+
+    .logoText {
+        font-size: 28px;
+    }
+
+    .contactTitle {
+        font-size: 32px;
+        margin-bottom: 40px;
+    }
+
+    .contactContainer {
+        gap: 32px;
+    }
+
+    .addressCard {
+        padding: 20px;
+    }
+
+    .input,
+    .textarea {
+        font-size: 14px;
+        padding: 14px;
+        padding-right: 40px;
+    }
+
+    .submitBtn,
+    .mapBtn {
+        padding: 14px;
+        font-size: 16px;
+    }
+
+    .formContainer {
+        padding: 28px 20px;
+    }
+}

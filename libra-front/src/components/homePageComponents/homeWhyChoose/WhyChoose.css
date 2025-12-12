@@ -1,0 +1,94 @@
+.whychoose-section {
+    height: 90vh; /* occupy 80% of viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #e2e8f0 100%);
+    font-family: 'Montserrat';
+}
+
+.whychoose-container {
+    text-align: center;
+    max-width: 1200px;
+    padding: 0 2rem;
+}
+
+.whychoose-header h2 {
+    font-family: 'Merriweather', serif;
+    font-size: 5rem; /* bigger text */
+    font-weight: 700;
+    color: #1B2A41;
+    margin-bottom: 1rem;
+}
+
+.whychoose-header p {
+    font-size: 2rem; /* bigger subtitle */
+    color: #555;
+    margin-bottom: 3rem;
+}
+
+/* Grid for cards */
+.whychoose-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+@media(min-width: 768px) {
+    .whychoose-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(min-width: 1024px) {
+    .whychoose-cards {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Card styling */
+.card {
+    background: #fff;
+    border-radius: 1rem;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.icon-container {
+    width: 4rem;
+    height: 4rem;
+    margin: 0 auto 1.5rem auto;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.bg-primary-light {
+    background: #F5F0E1;
+}
+
+.bg-accent-light {
+    background: #D9A54133;
+}
+
+.card h3 {
+    font-family: 'Merriweather', serif;
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: #1B2A41;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}

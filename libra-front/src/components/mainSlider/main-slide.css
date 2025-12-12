@@ -1,0 +1,80 @@
+.hero-video-section {
+    position: relative;    /* ensure overlay stays inside */
+    width: 100%;
+    height: 75vh;          /* fixed height for slider */
+    overflow: hidden;      /* prevent overlay spill */
+}
+
+.slider-media {
+    width: 100%;
+    height: 100%;          /* cover parent container */
+    object-fit: cover;
+    display: block;
+    opacity: 0.35;
+}
+
+.slider-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;          /* exactly cover the slider */
+    background: linear-gradient(
+            rgba(245, 240, 225, 0.55),
+            rgba(27, 42, 65, 0.35)
+    );
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 60px;
+    z-index: 1;            /* make sure it’s above the image but below other sections */
+}
+
+.slider-overlay-content {
+    position: relative;
+    z-index: 2;            /* text above overlay */
+    max-width: 1020px;
+    text-align: left;
+    color: #1B2A41;
+}
+
+.slider-title {
+    font-size: 84px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    font-family: 'Montserrat';
+}
+
+.slider-subtitle {
+    font-size: 30px;
+    margin-bottom: 32px;
+    line-height: 1.6;
+    font-family: 'Montserrat';
+    font-weight: 400;
+}
+
+.slider-button {
+    display: inline-block;
+    padding: 14px 32px;
+    font-size: 25px;
+    font-weight: 600;
+    text-decoration: none;
+    color: #1B2A41;
+    font-family: 'Montserrat';
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #e2e8f0 100%);
+    border-radius: 12px;
+    transition: 0.25s ease;
+}
+
+.slider-button:hover {
+    background: #d7e3f3;
+    color: #1B2A41;
+    transform: translateY(-3px);
+}
+
+/* Add margin to the next section so it starts below slider */
+.libra-section {
+    position: relative;
+    z-index: 0;
+    padding-top: 60px;
+}

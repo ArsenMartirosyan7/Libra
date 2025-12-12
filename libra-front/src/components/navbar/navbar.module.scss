@@ -1,0 +1,185 @@
+.nav {
+  width: 100%;
+  background: #1B2A41;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  height: 76px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navRelativeContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.navContainer {
+  width: 100%;
+  max-width: 1280px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+}
+
+.navLogo {
+  color: #F6E2E0;
+  font-family: 'Centrazone', sans-serif;
+  font-size: 50px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.navLogo:hover {
+  opacity: 0.8;
+}
+
+.navItems {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.navItem {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.navItemText {
+  color: #F6E2E0;
+  text-decoration: none;
+  font-weight: 500;
+  font-family: 'Monserrat';
+  font-size: 23px;
+  padding: 8px 16px;
+  border-radius: 12px;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.navItemText:hover {
+  background: rgba(246, 226, 224, 0.2);
+  transform: translateY(-2px);
+}
+
+.navArrow {
+  width: 8px;
+  transition: transform 0.3s ease;
+}
+
+/* FACTORY DROPDOWN */
+.navItem:hover .navArrow {
+  transform: rotate(180deg);
+}
+
+.navFactories {
+  position: absolute;
+  top: 46px;
+  left: 0;
+  background: #F4F4F4;
+  border-radius: 14px;
+  display: none;
+  padding: 12px;
+  gap: 12px;
+  flex-direction: column;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+  min-width: 200px;
+}
+
+.navItem:hover .navFactories {
+  display: flex;
+}
+
+.navFactory {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.navFactory:hover {
+  background: rgba(0,0,0,0.05);
+}
+
+.navFactoryImg {
+  width: 40px;
+  height: 30px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.navFactoryTitle {
+  font-size: 15px;
+  font-weight: 500;
+  color: #1B2A41;
+}
+
+/* LANGUAGE DROPDOWN */
+.selectedLanguage,
+.navSelectedLanguage {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+}
+
+.additionalClass {
+  padding: 6px 10px;
+  border-radius: 12px;
+  transition: background 0.2s ease;
+}
+
+.additionalClass:hover {
+  background: rgba(246, 226, 224, 0.2);
+}
+
+.navLanguages {
+  display: none;
+  position: absolute;
+  top: 48px;
+  right: 0;
+  background: #F4F4F4;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  flex-direction: column;
+  width: 130px;
+  overflow: hidden;
+}
+
+.additionalClass:hover .navLanguages {
+  display: flex;
+}
+
+.navLanguagesLanguage {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  color: #1B2A41;
+}
+
+.navLanguagesLanguage:hover {
+  background: rgba(189,142,137,0.2);
+}
+
+.navLanguageFlagImg {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+}
+
+/* LINKS */
+.navA {
+  text-decoration: none;
+}
