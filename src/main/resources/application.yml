@@ -1,0 +1,67 @@
+spring:
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 200MB
+      max-request-size: 215MB
+      location: ${user.dir}/libra-front/public/images
+      resolve-lazily: false
+  main:
+    allow-bean-definition-overriding: true
+    allow-circular-references: true
+  datasource:
+    url: jdbc:postgresql://localhost:5432/libra_db?currentSchema=library&useUnicode=yes&characterEncoding=UTF-8&connectionTimeZone=UTC
+    username: libra
+    password: libra
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      minimum-idle: 5
+      maximum-pool-size: 20000
+      idle-timeout: 300000
+      max-lifetime: 2000000
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: UTC
+        hbm2ddl:
+          create_namespaces: true
+        temp:
+          use_jdbc_metadata_defaults: false
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        default_schema: library
+
+  web:
+    resources:
+      static-locations[0]: file:src/main/resources/static/
+      static-locations[1]: classpath:/static/,classpath:/static/images/,classpath:/public/,classpath:/resources/,classpath:/META-INF/resources/
+  mvc:
+    log-request-details: true
+    path match:
+      matching-strategy: ANT_PATH_MATCHER
+
+#jwt
+app:
+  jwt:
+    expiration: 3600000
+    secret: '74325432A462D4A614E635266556A586E3272357538782F413F4428477437FDGGF77217A25432A462D4A614E635266556A586E3272357538782F413F442847743777217A25432A462D4A614E635266556A586E3272357538782F413F442847743777217A25432A462D4A614E635266556A586E3272357538782F413F442847'
+  refreshToken:
+    refresh: 86400000
+
+#Logging
+logging:
+  level:
+    org.hibernate: error
+    org.springframework.data.jpa: error
+    org.springframework.web: error
+    org.springframework.security: error
+    org.springframework.context: error
+    org.springframework.beans: error
+    org.springframework.validation: error
+    org.springframework.messaging: error
+    org.hibernate.SQL: error
