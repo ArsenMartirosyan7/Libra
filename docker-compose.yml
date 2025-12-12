@@ -1,0 +1,56 @@
+version: '3.8'
+
+services:
+
+  postgres:
+    image: postgres:15
+    container_name: libra-postgres
+    restart: always
+    environment:
+      POSTGRES_DB: libra_db
+      POSTGRES_USER: libra
+      POSTGRES_PASSWORD: libra
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - my-network
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: libra-backend
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/libra_db?currentSchema=library&connectionTimeZone=UTC
+      - SPRING_DATASOURCE_USERNAME=libra
+      - SPRING_DATASOURCE_PASSWORD=libra
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+    networks:
+      - my-network
+
+  react-front:
+    build:
+      context: ./libra-front
+      dockerfile: Dockerfile
+    container_name: libra-frontend
+    image: nginx:alpine
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/site.conf:/etc/nginx/conf.d/site.conf
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+    networks:
+      - my-network
+
+volumes:
+  postgres_data:
+
+networks:
+  my-network:
+    driver: bridge

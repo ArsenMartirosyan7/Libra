@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+
+:root {
+    --black-text: #291818;
+    --red: #852d23;
+    --green: #2a5f40;
+    --white: #ffffff;
+    --green-10percent: #eaf2ed;
+    --red-5percent: #fefafa;
+    --dark-green: #0b1c11;
+
+    --hedaing-1-font-family: Centrasone-Regular, sans-serif;
+    --hedaing-1-font-size: 228px;
+    --hedaing-1-line-height: 176px;
+    --hedaing-1-font-weight: 400;
+    --hedaing-1-font-style: normal;
+    --workhorse-font-family: Montserrat-Regular, sans-serif;
+    --workhorse-font-size: 20px;
+    --workhorse-line-height: 30px;
+    --workhorse-font-weight: 400;
+    --workhorse-font-style: normal;
+    --small-buttons-text-font-family: Montserrat-SemiBold, sans-serif;
+    --small-buttons-text-font-size: 12px;
+    --small-buttons-text-line-height: 14px;
+    --small-buttons-text-font-weight: 600;
+    --small-buttons-text-font-style: normal;
+    --list-text-font-family: Montserrat-SemiBold, sans-serif;
+    --list-text-font-size: 12px;
+    --list-text-line-height: 14px;
+    --list-text-font-weight: 600;
+    --list-text-font-style: normal;
+    --h1-tablet-font-family: Centrasone-Regular, sans-serif;
+    --h1-tablet-font-size: 100px;
+    --h1-tablet-line-height: 110%;
+    --h1-tablet-font-weight: 400;
+    --h1-tablet-font-style: normal;
+    --workhorse-mobile-font-family: Montserrat-Regular, sans-serif;
+    --workhorse-mobile-font-size: 16px;
+    --workhorse-mobile-line-height: 24px;
+    --workhorse-mobile-font-weight: 400;
+    --workhorse-mobile-font-style: normal;
+    --workhorse-list-font-family: Montserrat-Regular, sans-serif;
+    --workhorse-list-font-size: 20px;
+    --workhorse-list-line-height: 24px;
+    --workhorse-list-font-weight: 400;
+    --workhorse-list-font-style: normal;
+    --h2-font-family: Centrasone-Regular, sans-serif;
+    --h2-font-size: 48px;
+    --h2-line-height: 110%;
+    --h2-font-weight: 400;
+    --h2-font-style: normal;
+    --workhorse-list-mobile-font-family: Montserrat-Regular, sans-serif;
+    --workhorse-list-mobile-font-size: 16px;
+    --workhorse-list-mobile-line-height: 16px;
+    --workhorse-list-mobile-font-weight: 400;
+    --workhorse-list-mobile-font-style: normal;
+    --h2-mobile-font-family: Centrasone-Regular, sans-serif;
+    --h2-mobile-font-size: 32px;
+    --h2-mobile-line-height: 110%;
+    --h2-mobile-font-weight: 400;
+    --h2-mobile-font-style: normal;
+    --h2-mobile-font-family: Centrasone-Regular, sans-serif;
+    --h2-mobile-font-size: 36px;
+    --h2-mobile-line-height: 110%;
+    --h2-mobile-font-weight: 400;
+    --h2-mobile-font-style: normal;
+    --headers-mobile-fabrika-font-family: Centrasone-Regular, sans-serif;
+    --headers-mobile-fabrika-font-size: 64px;
+    --headers-mobile-fabrika-line-height: 110%;
+    --headers-mobile-fabrika-font-weight: 400;
+    --headers-mobile-fabrika-font-style: normal;
+
+}

@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "ES2019",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "allowJs": true,
+    "checkJs": false,
+    "noEmit": true,
+    "alwaysStrict": true,
+    "esModuleInterop": true,
+    "noImplicitOverride": true,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": "src",
+    "jsx": "react"
+  },
+  "include": ["src"],
+  "exclude": ["node_modules"]
+}

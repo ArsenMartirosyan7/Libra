@@ -1,0 +1,118 @@
+{
+  "name": "libra-front",
+  "version": "0.1.0",
+  "lockfileVersion": 3,
+  "requires": true,
+  "proxy": "http://localhost:8080",
+  "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@fortawesome/fontawesome-svg-core": "^6.5.1",
+    "@fortawesome/free-solid-svg-icons": "^6.5.1",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@fullcalendar/core": "^6.1.11",
+    "@mui/icons-material": "^5.15.21",
+    "@mui/lab": "^5.0.0-alpha.170",
+    "@mui/material": "^5.15.19",
+    "@mui/styled-engine-sc": "^6.0.0-alpha.18",
+    "@mui/x-date-pickers": "^7.6.1",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "axios": "^1.7.2",
+    "chart.js": "^4.4.2",
+    "classnames": "^2.5.1",
+    "color-calendar": "^1.0.7",
+    "cors": "^2.8.5",
+    "date-fns": "^3.6.0",
+    "dayjs": "^1.11.10",
+    "dotenv": "^16.4.5",
+    "draft-js": "^0.11.7",
+    "filepond": "^4.30.6",
+    "filepond-plugin-image-exif-orientation": "^1.0.11",
+    "filepond-plugin-image-preview": "^4.6.12",
+    "formik": "^2.4.6",
+    "framer-motion": "^11.0.21",
+    "history": "^5.3.0",
+    "package-name": "^0.1.0",
+    "popmotion": "^11.0.5",
+    "primereact": "^10.6.2",
+    "prop-types": "^15.8.1",
+    "quill-color-picker-enhance": "^1.1.5",
+    "ra-language-armenian": "^1.0.0",
+    "react": "^18.2.0",
+    "react-bootstrap": "^2.10.2",
+    "react-calendar": "^4.8.0",
+    "react-datepicker": "^6.9.0",
+    "react-dom": "^18.2.0",
+    "react-draft-wysiwyg": "^1.15.0",
+    "react-feather": "^2.0.10",
+    "react-filepond": "^7.1.2",
+    "react-horizontal-scrolling-menu": "^4.1.1",
+    "react-intl": "^6.6.8",
+    "react-modern-calendar-datepicker": "^3.1.6",
+    "react-quill": "^2.0.0",
+    "react-router-dom": "^6.22.3",
+    "react-scripts": "^5.0.1",
+    "react-spring": "^9.7.3",
+    "react-switch": "^7.0.0",
+    "react-toastify": "^10.0.5",
+    "sanitize-html": "^2.13.0",
+    "sass": "^1.70.0",
+    "semantic-ui-react": "^2.1.5",
+    "shelljs": "^0.8.4",
+    "slick-carousel": "^1.8.1",
+    "styled-components": "^6.1.8",
+    "web-vitals": "^2.1.4",
+    "yup": "^1.4.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "lint-staged": "lint-staged -r -v",
+    "lint": "eslint --fix . --ext .js,.jsx",
+    "stylelint": "stylelint \"**/*.{css,scss}\"",
+    "eject": "react-scripts eject",
+    "lint:code-base": "eslint --quiet --config .eslintrc --ext .js,.jsx",
+    "lint:styles-base": "stylelint --config ./stylelint.config.js",
+    "prepare": "husky"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
+    "style-loader": "^4.0.0",
+    "stylelint": "^16.5.0",
+    "stylelint-config-sass-guidelines": "^11.1.0",
+    "stylelint-config-standard-scss": "^13.1.0",
+    "stylelint-order": "^6.0.4",
+    "stylelint-scss": "^6.3.0"
+  },
+  "lint-staged": {
+    "*.{js, jsx}": [
+      "npm run lint:code-base -- --fix"
+    ],
+    "src/**/*.scss": [
+      "npm run lint:styles-base"
+    ]
+  }
+}
