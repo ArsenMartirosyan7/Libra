@@ -1,0 +1,820 @@
+// Colors
+$primary: #6366f1;
+$primary-dark: #1B2A41;
+$secondary: #64748b;
+$light-bg: #f8fafc;
+$white: #ffffff;
+$border: #e2e8f0;
+$text-dark: #1e293b;
+$text-light: #64748b;
+$text-lighter: #94a3b8;
+$success: #10b981;
+$warning: #f59e0b;
+$danger: #ef4444;
+$info: #3b82f6;
+
+// Container
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, #f8fafc, #f1f5f9);
+  padding: 2rem 1.5rem;
+
+  @media (max-width: 768px) {
+    padding: 1.5rem 1rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 1rem 0.75rem;
+  }
+}
+
+// Success & Error Messages
+.successBanner,
+.errorBanner {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  border-radius: 0.75rem;
+  margin-bottom: 2rem;
+  font-weight: 500;
+  animation: slideDown 0.3s ease-out;
+
+  span {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.successBanner {
+  background: rgba($success, 0.1);
+  border: 2px solid rgba($success, 0.3);
+  color: $success;
+}
+
+.errorBanner {
+  background: rgba($danger, 0.1);
+  border: 2px solid rgba($danger, 0.3);
+  color: $danger;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Loading & Error States
+.loadingState,
+.errorState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  gap: 1.5rem;
+  text-align: center;
+
+  p {
+    font-size: 1.125rem;
+    color: $text-light;
+    margin: 0;
+  }
+}
+
+.errorState {
+  gap: 2rem;
+
+  .errorIcon {
+    font-size: 4rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+}
+
+.spinner {
+  width: 3rem;
+  height: 3rem;
+  border: 3px solid rgba(99, 102, 241, 0.1);
+  border-top-color: $primary;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.retryBtn {
+  padding: 0.875rem 2rem;
+  background: linear-gradient(to right, $primary, $primary-dark);
+  color: white;
+  border: none;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &:hover {
+    box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.5);
+    transform: translateY(-2px);
+  }
+}
+
+// Content
+.content {
+  max-width: 1400px;
+  margin: 0 auto;
+  animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Header Card
+.headerCard {
+  background: $white;
+  border: 2px solid $border;
+  border-radius: 1.25rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  animation: slideDown 0.6s ease-out;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.profileHeader {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex: 1;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+.avatar {
+  width: 5.5rem;
+  height: 5.5rem;
+  border-radius: 1.25rem;
+  background: linear-gradient(135deg, $primary, $primary-dark);
+  color: $white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 800;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+
+  @media (max-width: 480px) {
+    width: 4.5rem;
+    height: 4.5rem;
+    font-size: 1.75rem;
+  }
+}
+
+.headerInfo {
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+}
+
+.name {
+  font-size: 2rem;
+  font-weight: 800;
+  color: $text-dark;
+  margin: 0;
+  margin-bottom: 0.25rem;
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
+}
+
+.email {
+  font-size: 1rem;
+  color: $text-light;
+  margin: 0;
+  margin-bottom: 0.5rem;
+}
+
+.memberSince {
+  font-size: 0.85rem;
+  color: $text-lighter;
+  margin: 0;
+}
+
+.editHeaderBtn {
+  padding: 0.875rem 1.75rem;
+  background: linear-gradient(to right, $primary, $primary-dark);
+  color: $white;
+  border: none;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  white-space: nowrap;
+
+  &:hover {
+    box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.5);
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+}
+
+// Main Grid
+.mainGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 2rem;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+// Card Styles
+.profileCard,
+.securityCard,
+.statsCard,
+.preferencesCard,
+.dangerCard {
+  background: $white;
+  border: 2px solid $border;
+  border-radius: 1.25rem;
+  padding: 1.75rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  transition: all 0.3s;
+  animation: cardAppear 0.5s ease-out;
+
+  &:hover {
+    border-color: $primary;
+    box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.2);
+  }
+}
+
+@keyframes cardAppear {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dangerCard {
+  border-color: rgba($danger, 0.3);
+  background: linear-gradient(135deg, rgba($danger, 0.02), transparent);
+
+  &:hover {
+    border-color: $danger;
+  }
+}
+
+.cardHeader {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid $border;
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: $text-dark;
+  margin: 0;
+}
+
+// Forms
+.form,
+.modalForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  label {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: $text-dark;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  input,
+  textarea,
+  select {
+    padding: 1rem 1.25rem;
+    border: 2px solid $border;
+    border-radius: 0.75rem;
+    font-size: 1rem;
+    font-family: inherit;
+    outline: none;
+    transition: all 0.3s;
+    background: $white;
+    color: $text-dark;
+
+    &::placeholder {
+      color: $text-lighter;
+    }
+
+    &:focus {
+      border-color: $primary;
+      box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+    }
+
+    &:disabled {
+      background: $light-bg;
+      cursor: not-allowed;
+    }
+  }
+
+  textarea {
+    resize: vertical;
+    font-family: inherit;
+  }
+}
+
+.formActions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+  }
+}
+
+.saveBtn,
+.confirmBtn {
+  flex: 1;
+  padding: 1rem 1.25rem;
+  background: linear-gradient(to right, $primary, $primary-dark);
+  color: $white;
+  border: none;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+
+  &:hover {
+    box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.5);
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.cancelBtn,
+.cancelModalBtn {
+  flex: 1;
+  padding: 1rem 1.25rem;
+  background: $light-bg;
+  color: $text-dark;
+  border: 2px solid $border;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+
+  &:hover {
+    background: $border;
+    border-color: $text-light;
+  }
+}
+
+// Info Grid
+.infoGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.infoItem {
+  padding: 1rem;
+  background: $light-bg;
+  border-radius: 0.75rem;
+  border: 1px solid $border;
+}
+
+.infoLabel {
+  font-size: 0.75rem;
+  color: $text-lighter;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+}
+
+.infoValue {
+  font-size: 1rem;
+  font-weight: 600;
+  color: $text-dark;
+  margin: 0;
+  word-break: break-word;
+}
+
+// Security Content
+.securityContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.securityItem {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.25rem;
+  background: $light-bg;
+  border-radius: 0.875rem;
+  border: 1px solid $border;
+  transition: all 0.3s;
+
+  &:hover {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.05), transparent);
+    border-color: $primary;
+  }
+}
+
+.securityIcon {
+  font-size: 1.75rem;
+  flex-shrink: 0;
+}
+
+.securityInfo {
+  flex: 1;
+
+  h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: $text-dark;
+    margin: 0 0 0.25rem 0;
+  }
+
+  p {
+    font-size: 0.875rem;
+    color: $text-light;
+    margin: 0;
+  }
+}
+
+.securityBtn {
+  padding: 0.75rem 1.5rem;
+  background: $primary;
+  color: $white;
+  border: none;
+  border-radius: 0.625rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  white-space: nowrap;
+  flex-shrink: 0;
+
+  &:hover {
+    background: darken($primary, 5%);
+    transform: translateY(-2px);
+  }
+}
+
+.verifiedBadge {
+  padding: 0.5rem 1rem;
+  background: rgba($success, 0.2);
+  color: darken($success, 10%);
+  border: 1px solid rgba($success, 0.3);
+  border-radius: 0.625rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+// Stats Content
+.statsContent {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.25rem;
+  background: $light-bg;
+  border-radius: 0.875rem;
+  border: 1px solid $border;
+  text-align: center;
+  transition: all 0.3s;
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: $primary;
+    box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.2);
+  }
+}
+
+.statIcon {
+  font-size: 2rem;
+}
+
+.statData {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.statNumber {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: $primary;
+  margin: 0;
+}
+
+.statLabel {
+  font-size: 0.75rem;
+  color: $text-light;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+// Preferences
+.preferencesList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.preferenceItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.25rem;
+  background: $light-bg;
+  border-radius: 0.875rem;
+  border: 1px solid $border;
+  transition: all 0.3s;
+
+  &:hover {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.05), transparent);
+    border-color: $primary;
+  }
+
+  div {
+    flex: 1;
+
+    h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: $text-dark;
+      margin: 0 0 0.25rem 0;
+    }
+
+    p {
+      font-size: 0.875rem;
+      color: $text-light;
+      margin: 0;
+    }
+  }
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+// Toggle Switch
+.toggle {
+  position: relative;
+  display: inline-flex;
+  cursor: pointer;
+  flex-shrink: 0;
+
+  input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+
+    &:checked + .toggleSlider {
+      background: $primary;
+
+      &::before {
+        transform: translateX(1.25rem);
+      }
+    }
+  }
+}
+
+.toggleSlider {
+  display: block;
+  width: 3rem;
+  height: 1.75rem;
+  background: $border;
+  border-radius: 1rem;
+  transition: all 0.3s;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    background: $white;
+    top: 0.125rem;
+    left: 0.125rem;
+    transition: all 0.3s;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  }
+}
+
+// Danger Zone
+.dangerContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.deleteAccountBtn {
+  padding: 1rem 1.25rem;
+  background: rgba($danger, 0.1);
+  color: $danger;
+  border: 2px solid rgba($danger, 0.3);
+  border-radius: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+
+  &:hover {
+    background: rgba($danger, 0.2);
+    border-color: $danger;
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.dangerWarning {
+  font-size: 0.875rem;
+  color: $danger;
+  margin: 0;
+  padding: 0.75rem 1rem;
+  background: rgba($danger, 0.1);
+  border-left: 3px solid $danger;
+  border-radius: 0.5rem;
+}
+
+// Modal
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-out;
+  padding: 1rem;
+}
+
+.modal {
+  background: $white;
+  border-radius: 1.25rem;
+  padding: 2rem;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+  animation: slideUp 0.3s ease-out;
+  max-height: 90vh;
+  overflow-y: auto;
+
+  @media (max-width: 480px) {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid $border;
+
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: $text-dark;
+    margin: 0;
+  }
+}
+
+.closeBtn {
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: $light-bg;
+  border-radius: 0.625rem;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $text-dark;
+
+  &:hover {
+    background: $border;
+    transform: rotate(90deg);
+  }
+}
+
+.modalActions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+  }
+}

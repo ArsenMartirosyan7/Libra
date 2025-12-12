@@ -1,0 +1,364 @@
+// Colors
+$primary: #2d2fb3;
+$primary-dark: #1B2A41;
+$secondary: #64748b;
+$light-bg: #f8fafc;
+$white: #ffffff;
+$border: #e2e8f0;
+$text-dark: #1e293b;
+$text-light: #64748b;
+$text-lighter: #94a3b8;
+$success: #10b981;
+$warning: #f59e0b;
+$danger: #ef4444;
+
+$transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+// Mobile Toggle Button
+.mobileToggle {
+  display: none;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 999;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, $primary, $primary-dark);
+  color: $white;
+  border: none;
+  border-radius: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: $transition;
+
+  @media (max-width: 1024px) {
+    display: block;
+  }
+
+  &:hover {
+    box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.3);
+    transform: translateY(-2px);
+  }
+}
+
+// Mobile Overlay
+.mobileOverlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 99;
+
+  @media (max-width: 1024px) {
+    display: block;
+  }
+}
+
+// Sidebar
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 280px;
+  background: $white;
+  border-right: 2px solid $border;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  z-index: 100;
+  transition: width 0.3s ease;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  @media (max-width: 1024px) {
+    position: fixed;
+    width: 280px;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.15);
+    z-index: 999;
+  }
+
+  &.mobileOpen {
+    @media (max-width: 1024px) {
+      transform: translateX(0);
+    }
+  }
+
+  &.collapsed {
+    width: 80px;
+
+    .toggleBtn {
+      transform: rotate(180deg);
+    }
+
+    .sectionTitle,
+    .navDescription,
+    .navText,
+    .sidebarFooter {
+      display: none;
+    }
+
+    .navIcon {
+      margin-right: 0;
+    }
+
+    .navItem {
+      justify-content: center;
+    }
+
+    .logoText {
+      display: none;
+    }
+
+    .logo {
+      justify-content: center;
+    }
+  }
+}
+
+// Sidebar Header
+.sidebarHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem;
+  border-bottom: 1px solid $border;
+  flex-shrink: 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  transition: $transition;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.logoIcon {
+  font-size: 1.75rem;
+  display: block;
+}
+
+.logoText {
+  font-size: 3.25rem;
+  font-weight: 1000;
+  background: linear-gradient(to right, $primary, $primary-dark);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: 'Centrazone';
+  background-clip: text;
+  letter-spacing: -0.5px;
+}
+
+.toggleBtn {
+  width: 36px;
+  height: 36px;
+  border: 2px solid $border;
+  background: $light-bg;
+  border-radius: 0.5rem;
+  color: $text-dark;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: $transition;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  &:hover {
+    background: $border;
+    border-color: $text-light;
+  }
+
+  @media (max-width: 1024px) {
+    display: none;
+  }
+}
+
+// Navigation
+.nav {
+  flex: 1;
+  padding: 1.5rem 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $border;
+    border-radius: 3px;
+
+    &:hover {
+      background: $text-lighter;
+    }
+  }
+}
+
+.navSection {
+  padding: 0 0.75rem;
+  margin-bottom: 1.5rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.sectionTitle {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: $text-lighter;
+  padding: 0 1rem 1rem 1rem;
+  margin: 0;
+}
+
+// Navigation Item
+.navItem {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.875rem 1rem;
+  background: transparent;
+  border: none;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: $transition;
+  text-align: left;
+  color: $text-light;
+  margin-bottom: 0.5rem;
+
+  &:hover {
+    background: $light-bg;
+    color: $text-dark;
+  }
+
+  &.active {
+    background: linear-gradient(135deg, rgba($primary, 0.1), rgba($primary-dark, 0.05));
+    color: $primary;
+    border-left: 3px solid $primary;
+    padding-left: calc(1rem - 3px);
+
+    .navIcon {
+      font-size: 1.5rem;
+    }
+
+    .navLabel {
+      font-weight: 700;
+      color: $primary;
+    }
+  }
+}
+
+.navIcon {
+  font-size: 1.25rem;
+  flex-shrink: 0;
+  margin-right: 0.25rem;
+  transition: $transition;
+}
+
+.navText {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0;
+}
+
+.navLabel {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: $text-dark;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.navDescription {
+  font-size: 0.8rem;
+  color: $text-lighter;
+  line-height: 1.3;
+  white-space: normal;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+// Sidebar Footer
+.sidebarFooter {
+  padding: 1.5rem;
+  border-top: 1px solid $border;
+  flex-shrink: 0;
+}
+
+.footerCard {
+  padding: 1rem;
+  background: linear-gradient(135deg, rgba($primary, 0.05), rgba($primary, 0.02));
+  border: 1px solid rgba($primary, 0.2);
+  border-radius: 0.75rem;
+  text-align: center;
+}
+
+.footerTitle {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: $text-dark;
+  margin: 0 0 0.25rem 0;
+}
+
+.footerText {
+  font-size: 0.85rem;
+  color: $text-light;
+  margin: 0 0 0.75rem 0;
+}
+
+.helpBtn {
+  width: 100%;
+  padding: 0.625rem 1rem;
+  background: $primary;
+  color: $white;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: $transition;
+
+  &:hover {
+    background: $primary-dark;
+    transform: translateY(-2px);
+  }
+}
+
+// Responsive Adjustments
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .mobileToggle {
+    top: 1rem;
+    right: 1rem;
+  }
+}
