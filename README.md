@@ -194,7 +194,7 @@ The application includes sample data that will be automatically loaded on first 
 
 ## 🏗️ Project Structure
 
-```
+
 libra/
 ├── src/
 │   ├── main/
@@ -232,7 +232,7 @@ libra/
 ├── Dockerfile                   # Docker build file
 ├── pom.xml                      # Maven build configuration
 └── README.md
-```
+
 ## 🎯 Current Status
 
 ### Completed Features ✅
